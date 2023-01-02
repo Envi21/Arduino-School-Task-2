@@ -1,5 +1,5 @@
 #include <Servo.h>
-long bosco = 0;
+long lol = 0;
 Servo myServo;
 int angulo;
 int serial;
@@ -21,15 +21,15 @@ void setup() {
 }
 
 void loop() {
-	bosco = analogRead(pot);
-	angulo=map(bosco,0,1023,0,179);
+	lol = analogRead(pot);
+	angulo=map(lol,0,1023,0,179);
 	Serial.print("Pot =  ");
-	Serial.print(bosco);
+	Serial.print(lol);
 	Serial.print(" Angulo =  ");
 	Serial.println(angulo);
 	myServo.write(angulo);
 	delay(300);
-	if(bosco >=0 && bosco <=204){
+	if(lol >=0 && lol <=204){
 
 		digitalWrite(led, HIGH);
 		digitalWrite(led2, LOW);
@@ -37,7 +37,7 @@ void loop() {
 		digitalWrite(led4, LOW);
 		digitalWrite(led5, LOW);
 	}
-	if(bosco >=205 && bosco <=409){
+	if(lol >=205 && lol <=409){
 
 		digitalWrite(led, LOW);
 		digitalWrite(led2, HIGH);
@@ -45,7 +45,7 @@ void loop() {
 		digitalWrite(led4, LOW);
 		digitalWrite(led5, LOW);
 	}
-	if(bosco >=410 && bosco <=613){
+	if(lol >=410 && lol <=613){
 
 		digitalWrite(led, LOW);
 		digitalWrite(led2, LOW);
@@ -53,7 +53,7 @@ void loop() {
 		digitalWrite(led4, LOW);
 		digitalWrite(led5, LOW);
 	}
-	if(bosco >=614 && bosco <=818){
+	if(lol >=614 && lol <=818){
 
 		digitalWrite(led, LOW);
 		digitalWrite(led2, LOW);
@@ -61,7 +61,7 @@ void loop() {
 		digitalWrite(led4, HIGH);
 		digitalWrite(led5, LOW);
 	}
-	if(bosco >=819 && bosco <=1023){
+	if(lol >=819 && lol <=1023){
 		digitalWrite(led, LOW);
 		digitalWrite(led2, LOW);
 		digitalWrite(led3, LOW);
